@@ -1,0 +1,19 @@
+{% load static bootstrap4 %}
+<html>
+    <head>
+        <title>authenticate</title>
+        {% block styles %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        
+            <h1>Username: {{user.slackprofile.username}}</h1>
+            <h1>status: {{warn}}</h1>
+
+        {% endblock %}
+        {% block script %}
+        {% endblock %}
+
+    </body>
+</html>

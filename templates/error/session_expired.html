@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+        {% block head %}
+        <title>Error</title>
+        {% endblock %}
+        {% block styles %}
+        <link rel="stylesheet" href="{% static 'assets/css/error.css' %}">
+        {% endblock %}
+</head>
+
+<body>
+{% block content %}
+        <div id="clouds">
+            <div class="cloud x1"></div>
+            <div class="cloud x1_5"></div>
+            <div class="cloud x2"></div>
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>
+        <div class='c'>
+            <div class='_404'>Oopsie</div>
+            <hr>
+            <div class='_1'>SESSION EXPIRED</div>
+            <div class='_2'>click the link below</div>
+            <a class='btn' href='/slack/login/'>Renew</a>
+        </div>
+{% endblock %}
+</body>

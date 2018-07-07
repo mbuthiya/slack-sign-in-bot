@@ -1,0 +1,26 @@
+<htm>
+    <head>
+        <title>
+            hello world
+        </title>
+    </head>
+    <body>
+        <h1>
+            Hello your ip is {{ip}}
+        </h1>
+        <h2>
+            Day record
+        </h2>
+        {% if day_record %}
+        <ul>
+            <li>Your Token: {{day_record.token}}</li>
+            <li>Date: {{day_record.date_in | date}}</li>
+            <li>Time in: {{day_record.time_description | date }} </li>
+            <li>Authenticated: {% if day_record.is_authenticated %} Yes {% else %} No {% endif %}</li>
+        </ul>
+        <a href="{% url 'register:auth-token' day_record.token %}">click here to authenticate </a>
+        {% else %}
+        <h4>You have no token yet please request one via the slack bot</h4>
+        {% endif %}
+    </body>
+</htm>

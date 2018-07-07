@@ -1,0 +1,60 @@
+{% extends "base/base_sign-in-bot.html" %}
+{% load static %}
+<head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+        {% block styles %}
+        {{ block.super }}
+        <link rel="stylesheet" href="{% static 'assets/css/registration.css' %}">
+        {% endblock %}
+</head>
+
+<body>
+        {% block content %}
+        {{ block.super }}
+
+                    <!-- start welcome section-->
+                    <section class="welcome p-t-10">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h1 class="title-4">Welcome
+                                            <span>{{user.slackprofile.username}}</span>
+                                        </h1>
+                                        <hr class="line-seprate">
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                    <!-- stop welcome section-->
+
+                    <!-- STATISTIC-->
+                    <section class="statistic statistic2">
+                            <div class="container">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Today's record
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Token Info</h4>
+                                        {% if day_record %}
+                                        <p class="card-text">Your Token: {{day_record.token}}</p>
+                                        <p class="card-text">Date: {{day_record.date_in }}</p>
+                                        <p class="card-text">Time in: {{ day_record.time_description }} </p>
+                                        <p class="card-text">Authenticated: {% if day_record.is_authenticated %} Yes {% else %} No {% endif %}</p>
+                                        {% if not day_record.is_authenticated %}
+                                        <a href="{% url 'register:auth-token' day_record.token %}" class="btn btn-primary">click here to authenticate </a>
+                                        {% endif %}
+                                        {% else %}
+                                        <p class="card-text">You have no token yet please request one via the slack bot</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- END STATISTIC-->
+        {% endblock %}
+
+</body>
+  

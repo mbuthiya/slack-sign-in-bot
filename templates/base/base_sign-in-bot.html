@@ -1,0 +1,105 @@
+
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="sign in bot">
+        <meta name="author" content="Jak hax">
+        <meta name="keywords" content="sign in bot">
+        {% endblock %}
+
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Sign In Bot</title>
+        {% endif %}
+
+        {% block styles %}
+        <!-- Fontfaces CSS-->
+        <link href="{% static "css/font-face.css" rel="stylesheet" %}" media="all">
+        <link href="{% static "vendor/font-awesome-4.7/css/font-awesome.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/font-awesome-5/css/fontawesome-all.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/mdi-font/css/material-design-iconic-font.min.css" %}" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="{% static "vendor/bootstrap-4.1/bootstrap.min.css" %}" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-toggle.css' %}">
+
+        <!-- Vendor CSS-->
+        <link href="{% static "vendor/animsition/animsition.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/wow/animate.css" rel="stylesheet" %}" media="all">
+        <link href="{% static "vendor/css-hamburgers/hamburgers.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/slick/slick.css" rel="stylesheet" %}" media="all">
+        <link href="{% static "vendor/select2/select2.min.css" %}" rel="stylesheet" media="all">
+        <link href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        
+        <link href="{% static "assets/css/theme.css" %}" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/registration.css' %}">
+
+        {% endblock %}
+    </head>
+
+    <body class="animsition">
+            <div class="page-wrapper">
+             
+                <div class="page-content--bgf7">
+                        <!--start search section-->
+                        <section class="au-breadcrumb2">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="au-breadcrumb-content">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- end search section-->
+
+                            {% block content %}
+                            {% endblock %}                 
+                </div>         
+            </div>
+
+        {% block script %}
+
+        <!-- Jquery JS-->
+        <script src="{% static "vendor/jquery-3.2.1.min.js" %}"></script>
+        <!-- Bootstrap JS-->
+        <script src="{% static "vendor/bootstrap-4.1/popper.min.js" %}"></script>
+        <script src="{% static "vendor/bootstrap-4.1/bootstrap.min.js" %}"></script>
+        <script src="{% static 'assets/bootstrap/js/bootstrap-toggle.js' %}"></script>
+        <!-- Vendor JS       -->
+        <script src="{% static "vendor/slick/slick.min.js" %}">
+        </script>
+        <script src="{% static "vendor/wow/wow.min.js" %}"></script>
+        <script src="{% static "vendor/animsition/animsition.min.js" %}"></script>
+        <script src="{% static "vendor/bootstrap-progressbar/bootstrap-progressbar.min.js" %}">
+        </script>
+        <script src="{% static "vendor/counter-up/jquery.waypoints.min.js" %}"></script>
+        <script src="{% static "vendor/counter-up/jquery.counterup.min.js" %}">
+        </script>
+        <script src="{% static "vendor/circle-progress/circle-progress.min.js" %}"></script>
+        <script src="{% static "vendor/perfect-scrollbar/perfect-scrollbar.js" %}"></script>
+        <script src="{% static "vendor/chartjs/Chart.bundle.min.js" %}"></script>
+        <script src="{% static "vendor/select2/select2.min.js" %}"></script>
+        
+        <!-- Main JS-->
+        
+        <script src="{% static "js/main.js" %}"></script>
+        <script src="{% static "assets/js/script.js" %}"></script>
+        {% endblock %}
+
+    </body> 
+</html>
+
+
